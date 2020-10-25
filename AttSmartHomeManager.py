@@ -42,11 +42,17 @@ options.add_argument("--test-type")
 # It provides capabilities for navigating to web pages, user input, JavaScript execution, and more.
 # ChromeDriver is a standalone server that implements the W3C WebDriver standard.
 # ChromeDriver is available for Chrome on Android and Chrome on Desktop (Mac, Linux, Windows and ChromeOS).
+
+# If you have any issue with the web driver just download the latest version from link and copy to the
+# project folder "chromedriver_win32"
+
 try:
     # Get current working directory
     chrome_driver_path = os.path.dirname(os.path.realpath(__file__))
     # Set the complete path to chromedriver.
-    chrome_driver_path += "\\chromedriver_win32\\ChromeDriver 83.0.4103.39.exe"
+#    chrome_driver_path += "\\chromedriver_win32\\ChromeDriver 83.0.4103.39.exe"
+    chrome_driver_path += "\\chromedriver_win32\\ChromeDriver 86.0.4240.22.exe"
+    print("chrome_driver_path = " + chrome_driver_path)
     # Pass the options to chromedriver.
     mWebDriver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
 except SessionNotCreatedException as error:
